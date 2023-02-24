@@ -1,0 +1,10 @@
+# # GetVerificationLevelResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**verification_level** | **int** |  | [optional]
+**withdraw_limits** | **map[string,int]** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

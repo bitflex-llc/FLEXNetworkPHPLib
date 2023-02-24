@@ -1,0 +1,13 @@
+# # PostWithdrawRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**amount** | **double** |  |
+**currency** | **string** |  |
+**address** | **string** |  |
+**destination_tag** | **string** |  | [optional]
+**google_authenticator_code** | **string** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
