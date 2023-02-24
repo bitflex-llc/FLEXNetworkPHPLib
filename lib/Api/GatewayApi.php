@@ -116,524 +116,7 @@ class GatewayApi
     }
 
     /**
-     * Operation apiGatewayMerchantGet
-     *
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Merchant[]
-     */
-    public function apiGatewayMerchantGet()
-    {
-        list($response) = $this->apiGatewayMerchantGetWithHttpInfo();
-        return $response;
-    }
-
-    /**
-     * Operation apiGatewayMerchantGetWithHttpInfo
-     *
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Merchant[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiGatewayMerchantGetWithHttpInfo()
-    {
-        $request = $this->apiGatewayMerchantGetRequest();
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\Merchant[]' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Merchant[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\Merchant[]';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Merchant[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiGatewayMerchantGetAsync
-     *
-     * 
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiGatewayMerchantGetAsync()
-    {
-        return $this->apiGatewayMerchantGetAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiGatewayMerchantGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiGatewayMerchantGetAsyncWithHttpInfo()
-    {
-        $returnType = '\OpenAPI\Client\Model\Merchant[]';
-        $request = $this->apiGatewayMerchantGetRequest();
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiGatewayMerchantGet'
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiGatewayMerchantGetRequest()
-    {
-
-        $resourcePath = '/api/Gateway/merchant';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiGatewayMerchantPost
-     *
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request create_merchant_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Merchant
-     */
-    public function apiGatewayMerchantPost($create_merchant_request = null)
-    {
-        list($response) = $this->apiGatewayMerchantPostWithHttpInfo($create_merchant_request);
-        return $response;
-    }
-
-    /**
-     * Operation apiGatewayMerchantPostWithHttpInfo
-     *
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Merchant, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiGatewayMerchantPostWithHttpInfo($create_merchant_request = null)
-    {
-        $request = $this->apiGatewayMerchantPostRequest($create_merchant_request);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\Merchant' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Merchant', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\Merchant';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Merchant',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiGatewayMerchantPostAsync
-     *
-     * 
-     *
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiGatewayMerchantPostAsync($create_merchant_request = null)
-    {
-        return $this->apiGatewayMerchantPostAsyncWithHttpInfo($create_merchant_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiGatewayMerchantPostAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiGatewayMerchantPostAsyncWithHttpInfo($create_merchant_request = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\Merchant';
-        $request = $this->apiGatewayMerchantPostRequest($create_merchant_request);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiGatewayMerchantPost'
-     *
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiGatewayMerchantPostRequest($create_merchant_request = null)
-    {
-
-        $resourcePath = '/api/Gateway/merchant';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($create_merchant_request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($create_merchant_request));
-            } else {
-                $httpBody = $create_merchant_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiGatewayStatusGet
+     * Operation apiV1GatewayStatusGet
      *
      * @param  string $transaction_id transaction_id (optional)
      *
@@ -641,14 +124,14 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ApiTransactionStatusResponse
      */
-    public function apiGatewayStatusGet($transaction_id = null)
+    public function apiV1GatewayStatusGet($transaction_id = null)
     {
-        list($response) = $this->apiGatewayStatusGetWithHttpInfo($transaction_id);
+        list($response) = $this->apiV1GatewayStatusGetWithHttpInfo($transaction_id);
         return $response;
     }
 
     /**
-     * Operation apiGatewayStatusGetWithHttpInfo
+     * Operation apiV1GatewayStatusGetWithHttpInfo
      *
      * @param  string $transaction_id (optional)
      *
@@ -656,9 +139,9 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ApiTransactionStatusResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiGatewayStatusGetWithHttpInfo($transaction_id = null)
+    public function apiV1GatewayStatusGetWithHttpInfo($transaction_id = null)
     {
-        $request = $this->apiGatewayStatusGetRequest($transaction_id);
+        $request = $this->apiV1GatewayStatusGetRequest($transaction_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -734,7 +217,7 @@ class GatewayApi
     }
 
     /**
-     * Operation apiGatewayStatusGetAsync
+     * Operation apiV1GatewayStatusGetAsync
      *
      * 
      *
@@ -743,9 +226,9 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiGatewayStatusGetAsync($transaction_id = null)
+    public function apiV1GatewayStatusGetAsync($transaction_id = null)
     {
-        return $this->apiGatewayStatusGetAsyncWithHttpInfo($transaction_id)
+        return $this->apiV1GatewayStatusGetAsyncWithHttpInfo($transaction_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -754,7 +237,7 @@ class GatewayApi
     }
 
     /**
-     * Operation apiGatewayStatusGetAsyncWithHttpInfo
+     * Operation apiV1GatewayStatusGetAsyncWithHttpInfo
      *
      * 
      *
@@ -763,10 +246,10 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiGatewayStatusGetAsyncWithHttpInfo($transaction_id = null)
+    public function apiV1GatewayStatusGetAsyncWithHttpInfo($transaction_id = null)
     {
         $returnType = '\OpenAPI\Client\Model\ApiTransactionStatusResponse';
-        $request = $this->apiGatewayStatusGetRequest($transaction_id);
+        $request = $this->apiV1GatewayStatusGetRequest($transaction_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -803,17 +286,17 @@ class GatewayApi
     }
 
     /**
-     * Create request for operation 'apiGatewayStatusGet'
+     * Create request for operation 'apiV1GatewayStatusGet'
      *
      * @param  string $transaction_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiGatewayStatusGetRequest($transaction_id = null)
+    public function apiV1GatewayStatusGetRequest($transaction_id = null)
     {
 
-        $resourcePath = '/api/Gateway/status';
+        $resourcePath = '/api/v1/gateway/status';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -902,7 +385,7 @@ class GatewayApi
     }
 
     /**
-     * Operation apiGatewayTransactionGet
+     * Operation apiV1GatewayTransactionGet
      *
      * @param  string $transaction_id transaction_id (optional)
      *
@@ -910,14 +393,14 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ApiPaymentPage
      */
-    public function apiGatewayTransactionGet($transaction_id = null)
+    public function apiV1GatewayTransactionGet($transaction_id = null)
     {
-        list($response) = $this->apiGatewayTransactionGetWithHttpInfo($transaction_id);
+        list($response) = $this->apiV1GatewayTransactionGetWithHttpInfo($transaction_id);
         return $response;
     }
 
     /**
-     * Operation apiGatewayTransactionGetWithHttpInfo
+     * Operation apiV1GatewayTransactionGetWithHttpInfo
      *
      * @param  string $transaction_id (optional)
      *
@@ -925,9 +408,9 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ApiPaymentPage, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiGatewayTransactionGetWithHttpInfo($transaction_id = null)
+    public function apiV1GatewayTransactionGetWithHttpInfo($transaction_id = null)
     {
-        $request = $this->apiGatewayTransactionGetRequest($transaction_id);
+        $request = $this->apiV1GatewayTransactionGetRequest($transaction_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1003,7 +486,7 @@ class GatewayApi
     }
 
     /**
-     * Operation apiGatewayTransactionGetAsync
+     * Operation apiV1GatewayTransactionGetAsync
      *
      * 
      *
@@ -1012,9 +495,9 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiGatewayTransactionGetAsync($transaction_id = null)
+    public function apiV1GatewayTransactionGetAsync($transaction_id = null)
     {
-        return $this->apiGatewayTransactionGetAsyncWithHttpInfo($transaction_id)
+        return $this->apiV1GatewayTransactionGetAsyncWithHttpInfo($transaction_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1023,7 +506,7 @@ class GatewayApi
     }
 
     /**
-     * Operation apiGatewayTransactionGetAsyncWithHttpInfo
+     * Operation apiV1GatewayTransactionGetAsyncWithHttpInfo
      *
      * 
      *
@@ -1032,10 +515,10 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiGatewayTransactionGetAsyncWithHttpInfo($transaction_id = null)
+    public function apiV1GatewayTransactionGetAsyncWithHttpInfo($transaction_id = null)
     {
         $returnType = '\OpenAPI\Client\Model\ApiPaymentPage';
-        $request = $this->apiGatewayTransactionGetRequest($transaction_id);
+        $request = $this->apiV1GatewayTransactionGetRequest($transaction_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1072,17 +555,17 @@ class GatewayApi
     }
 
     /**
-     * Create request for operation 'apiGatewayTransactionGet'
+     * Create request for operation 'apiV1GatewayTransactionGet'
      *
      * @param  string $transaction_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiGatewayTransactionGetRequest($transaction_id = null)
+    public function apiV1GatewayTransactionGetRequest($transaction_id = null)
     {
 
-        $resourcePath = '/api/Gateway/transaction';
+        $resourcePath = '/api/v1/gateway/transaction';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1171,7 +654,7 @@ class GatewayApi
     }
 
     /**
-     * Operation apiGatewayTransactionPost
+     * Operation apiV1GatewayTransactionPost
      *
      * @param  \OpenAPI\Client\Model\CreateTransactionRequest $create_transaction_request create_transaction_request (optional)
      *
@@ -1179,14 +662,14 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CreateTransactionResult
      */
-    public function apiGatewayTransactionPost($create_transaction_request = null)
+    public function apiV1GatewayTransactionPost($create_transaction_request = null)
     {
-        list($response) = $this->apiGatewayTransactionPostWithHttpInfo($create_transaction_request);
+        list($response) = $this->apiV1GatewayTransactionPostWithHttpInfo($create_transaction_request);
         return $response;
     }
 
     /**
-     * Operation apiGatewayTransactionPostWithHttpInfo
+     * Operation apiV1GatewayTransactionPostWithHttpInfo
      *
      * @param  \OpenAPI\Client\Model\CreateTransactionRequest $create_transaction_request (optional)
      *
@@ -1194,9 +677,9 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CreateTransactionResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiGatewayTransactionPostWithHttpInfo($create_transaction_request = null)
+    public function apiV1GatewayTransactionPostWithHttpInfo($create_transaction_request = null)
     {
-        $request = $this->apiGatewayTransactionPostRequest($create_transaction_request);
+        $request = $this->apiV1GatewayTransactionPostRequest($create_transaction_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1272,7 +755,7 @@ class GatewayApi
     }
 
     /**
-     * Operation apiGatewayTransactionPostAsync
+     * Operation apiV1GatewayTransactionPostAsync
      *
      * 
      *
@@ -1281,9 +764,9 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiGatewayTransactionPostAsync($create_transaction_request = null)
+    public function apiV1GatewayTransactionPostAsync($create_transaction_request = null)
     {
-        return $this->apiGatewayTransactionPostAsyncWithHttpInfo($create_transaction_request)
+        return $this->apiV1GatewayTransactionPostAsyncWithHttpInfo($create_transaction_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1292,7 +775,7 @@ class GatewayApi
     }
 
     /**
-     * Operation apiGatewayTransactionPostAsyncWithHttpInfo
+     * Operation apiV1GatewayTransactionPostAsyncWithHttpInfo
      *
      * 
      *
@@ -1301,10 +784,10 @@ class GatewayApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiGatewayTransactionPostAsyncWithHttpInfo($create_transaction_request = null)
+    public function apiV1GatewayTransactionPostAsyncWithHttpInfo($create_transaction_request = null)
     {
         $returnType = '\OpenAPI\Client\Model\CreateTransactionResult';
-        $request = $this->apiGatewayTransactionPostRequest($create_transaction_request);
+        $request = $this->apiV1GatewayTransactionPostRequest($create_transaction_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1341,17 +824,17 @@ class GatewayApi
     }
 
     /**
-     * Create request for operation 'apiGatewayTransactionPost'
+     * Create request for operation 'apiV1GatewayTransactionPost'
      *
      * @param  \OpenAPI\Client\Model\CreateTransactionRequest $create_transaction_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiGatewayTransactionPostRequest($create_transaction_request = null)
+    public function apiV1GatewayTransactionPostRequest($create_transaction_request = null)
     {
 
-        $resourcePath = '/api/Gateway/transaction';
+        $resourcePath = '/api/v1/gateway/transaction';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1360,1420 +843,6 @@ class GatewayApi
 
 
 
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($create_transaction_request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($create_transaction_request));
-            } else {
-                $httpBody = $create_transaction_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionGatewayMerchantGet
-     *
-     * @param  string $version version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Merchant[]
-     */
-    public function apiVversionGatewayMerchantGet($version)
-    {
-        list($response) = $this->apiVversionGatewayMerchantGetWithHttpInfo($version);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionGatewayMerchantGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Merchant[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionGatewayMerchantGetWithHttpInfo($version)
-    {
-        $request = $this->apiVversionGatewayMerchantGetRequest($version);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\Merchant[]' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Merchant[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\Merchant[]';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Merchant[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionGatewayMerchantGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayMerchantGetAsync($version)
-    {
-        return $this->apiVversionGatewayMerchantGetAsyncWithHttpInfo($version)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionGatewayMerchantGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayMerchantGetAsyncWithHttpInfo($version)
-    {
-        $returnType = '\OpenAPI\Client\Model\Merchant[]';
-        $request = $this->apiVversionGatewayMerchantGetRequest($version);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionGatewayMerchantGet'
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionGatewayMerchantGetRequest($version)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionGatewayMerchantGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Gateway/merchant';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionGatewayMerchantPost
-     *
-     * @param  string $version version (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request create_merchant_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Merchant
-     */
-    public function apiVversionGatewayMerchantPost($version, $create_merchant_request = null)
-    {
-        list($response) = $this->apiVversionGatewayMerchantPostWithHttpInfo($version, $create_merchant_request);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionGatewayMerchantPostWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Merchant, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionGatewayMerchantPostWithHttpInfo($version, $create_merchant_request = null)
-    {
-        $request = $this->apiVversionGatewayMerchantPostRequest($version, $create_merchant_request);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\Merchant' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Merchant', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\Merchant';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Merchant',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionGatewayMerchantPostAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayMerchantPostAsync($version, $create_merchant_request = null)
-    {
-        return $this->apiVversionGatewayMerchantPostAsyncWithHttpInfo($version, $create_merchant_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionGatewayMerchantPostAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayMerchantPostAsyncWithHttpInfo($version, $create_merchant_request = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\Merchant';
-        $request = $this->apiVversionGatewayMerchantPostRequest($version, $create_merchant_request);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionGatewayMerchantPost'
-     *
-     * @param  string $version (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantRequest $create_merchant_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionGatewayMerchantPostRequest($version, $create_merchant_request = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionGatewayMerchantPost'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Gateway/merchant';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($create_merchant_request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($create_merchant_request));
-            } else {
-                $httpBody = $create_merchant_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionGatewayStatusGet
-     *
-     * @param  string $version version (required)
-     * @param  string $transaction_id transaction_id (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ApiTransactionStatusResponse
-     */
-    public function apiVversionGatewayStatusGet($version, $transaction_id = null)
-    {
-        list($response) = $this->apiVversionGatewayStatusGetWithHttpInfo($version, $transaction_id);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionGatewayStatusGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  string $transaction_id (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ApiTransactionStatusResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionGatewayStatusGetWithHttpInfo($version, $transaction_id = null)
-    {
-        $request = $this->apiVversionGatewayStatusGetRequest($version, $transaction_id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\ApiTransactionStatusResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ApiTransactionStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\ApiTransactionStatusResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiTransactionStatusResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionGatewayStatusGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $transaction_id (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayStatusGetAsync($version, $transaction_id = null)
-    {
-        return $this->apiVversionGatewayStatusGetAsyncWithHttpInfo($version, $transaction_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionGatewayStatusGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $transaction_id (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayStatusGetAsyncWithHttpInfo($version, $transaction_id = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\ApiTransactionStatusResponse';
-        $request = $this->apiVversionGatewayStatusGetRequest($version, $transaction_id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionGatewayStatusGet'
-     *
-     * @param  string $version (required)
-     * @param  string $transaction_id (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionGatewayStatusGetRequest($version, $transaction_id = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionGatewayStatusGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Gateway/status';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($transaction_id !== null) {
-            if('form' === 'form' && is_array($transaction_id)) {
-                foreach($transaction_id as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['transactionId'] = $transaction_id;
-            }
-        }
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionGatewayTransactionGet
-     *
-     * @param  string $version version (required)
-     * @param  string $transaction_id transaction_id (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ApiPaymentPage
-     */
-    public function apiVversionGatewayTransactionGet($version, $transaction_id = null)
-    {
-        list($response) = $this->apiVversionGatewayTransactionGetWithHttpInfo($version, $transaction_id);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionGatewayTransactionGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  string $transaction_id (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ApiPaymentPage, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionGatewayTransactionGetWithHttpInfo($version, $transaction_id = null)
-    {
-        $request = $this->apiVversionGatewayTransactionGetRequest($version, $transaction_id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\ApiPaymentPage' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ApiPaymentPage', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\ApiPaymentPage';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiPaymentPage',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionGatewayTransactionGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $transaction_id (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayTransactionGetAsync($version, $transaction_id = null)
-    {
-        return $this->apiVversionGatewayTransactionGetAsyncWithHttpInfo($version, $transaction_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionGatewayTransactionGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $transaction_id (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayTransactionGetAsyncWithHttpInfo($version, $transaction_id = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\ApiPaymentPage';
-        $request = $this->apiVversionGatewayTransactionGetRequest($version, $transaction_id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionGatewayTransactionGet'
-     *
-     * @param  string $version (required)
-     * @param  string $transaction_id (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionGatewayTransactionGetRequest($version, $transaction_id = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionGatewayTransactionGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Gateway/transaction';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($transaction_id !== null) {
-            if('form' === 'form' && is_array($transaction_id)) {
-                foreach($transaction_id as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['transactionId'] = $transaction_id;
-            }
-        }
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionGatewayTransactionPost
-     *
-     * @param  string $version version (required)
-     * @param  \OpenAPI\Client\Model\CreateTransactionRequest $create_transaction_request create_transaction_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CreateTransactionResult
-     */
-    public function apiVversionGatewayTransactionPost($version, $create_transaction_request = null)
-    {
-        list($response) = $this->apiVversionGatewayTransactionPostWithHttpInfo($version, $create_transaction_request);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionGatewayTransactionPostWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  \OpenAPI\Client\Model\CreateTransactionRequest $create_transaction_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CreateTransactionResult, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionGatewayTransactionPostWithHttpInfo($version, $create_transaction_request = null)
-    {
-        $request = $this->apiVversionGatewayTransactionPostRequest($version, $create_transaction_request);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\CreateTransactionResult' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CreateTransactionResult', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\CreateTransactionResult';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CreateTransactionResult',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionGatewayTransactionPostAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  \OpenAPI\Client\Model\CreateTransactionRequest $create_transaction_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayTransactionPostAsync($version, $create_transaction_request = null)
-    {
-        return $this->apiVversionGatewayTransactionPostAsyncWithHttpInfo($version, $create_transaction_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionGatewayTransactionPostAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  \OpenAPI\Client\Model\CreateTransactionRequest $create_transaction_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionGatewayTransactionPostAsyncWithHttpInfo($version, $create_transaction_request = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\CreateTransactionResult';
-        $request = $this->apiVversionGatewayTransactionPostRequest($version, $create_transaction_request);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionGatewayTransactionPost'
-     *
-     * @param  string $version (required)
-     * @param  \OpenAPI\Client\Model\CreateTransactionRequest $create_transaction_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionGatewayTransactionPostRequest($version, $create_transaction_request = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionGatewayTransactionPost'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Gateway/transaction';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
 
 
         if ($multipart) {

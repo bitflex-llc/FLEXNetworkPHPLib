@@ -84,7 +84,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://127.0.0.1:5000';
+    protected $host = 'http://api.bcflex.com';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -439,7 +439,7 @@ class Configuration
     {
         return [
             [
-                "url" => "http://127.0.0.1:5000",
+                "url" => "http://api.bcflex.com",
                 "description" => "No description provided",
             ]
         ];

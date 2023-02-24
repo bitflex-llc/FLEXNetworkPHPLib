@@ -73,120 +73,36 @@ class GatewayApiTest extends TestCase
     }
 
     /**
-     * Test case for apiGatewayMerchantGet
+     * Test case for apiV1GatewayStatusGet
      *
      * .
      *
      */
-    public function testApiGatewayMerchantGet()
+    public function testApiV1GatewayStatusGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiGatewayMerchantPost
+     * Test case for apiV1GatewayTransactionGet
      *
      * .
      *
      */
-    public function testApiGatewayMerchantPost()
+    public function testApiV1GatewayTransactionGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiGatewayStatusGet
+     * Test case for apiV1GatewayTransactionPost
      *
      * .
      *
      */
-    public function testApiGatewayStatusGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiGatewayTransactionGet
-     *
-     * .
-     *
-     */
-    public function testApiGatewayTransactionGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiGatewayTransactionPost
-     *
-     * .
-     *
-     */
-    public function testApiGatewayTransactionPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionGatewayMerchantGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionGatewayMerchantGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionGatewayMerchantPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionGatewayMerchantPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionGatewayStatusGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionGatewayStatusGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionGatewayTransactionGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionGatewayTransactionGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionGatewayTransactionPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionGatewayTransactionPost()
+    public function testApiV1GatewayTransactionPost()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

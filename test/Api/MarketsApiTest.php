@@ -73,312 +73,144 @@ class MarketsApiTest extends TestCase
     }
 
     /**
-     * Test case for apiMarketsAssetsGet
+     * Test case for apiV1MarketsAssetsGet
      *
      * .
      *
      */
-    public function testApiMarketsAssetsGet()
+    public function testApiV1MarketsAssetsGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsCurrenciesGet
+     * Test case for apiV1MarketsCurrenciesGet
      *
      * .
      *
      */
-    public function testApiMarketsCurrenciesGet()
+    public function testApiV1MarketsCurrenciesGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsCurrencyInfoGet
+     * Test case for apiV1MarketsCurrencyinfoGet
      *
      * .
      *
      */
-    public function testApiMarketsCurrencyInfoGet()
+    public function testApiV1MarketsCurrencyinfoGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsGet
+     * Test case for apiV1MarketsGet
      *
      * .
      *
      */
-    public function testApiMarketsGet()
+    public function testApiV1MarketsGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsHistoryGet
+     * Test case for apiV1MarketsHistoryGet
      *
      * .
      *
      */
-    public function testApiMarketsHistoryGet()
+    public function testApiV1MarketsHistoryGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsListingRequestPost
+     * Test case for apiV1MarketsOrderbookGet
      *
      * .
      *
      */
-    public function testApiMarketsListingRequestPost()
+    public function testApiV1MarketsOrderbookGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsOrderbookGet
+     * Test case for apiV1MarketsOrdersPairGet
      *
      * .
      *
      */
-    public function testApiMarketsOrderbookGet()
+    public function testApiV1MarketsOrdersPairGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsOrdersPairGet
+     * Test case for apiV1MarketsSummaryGet
      *
      * .
      *
      */
-    public function testApiMarketsOrdersPairGet()
+    public function testApiV1MarketsSummaryGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsSummaryGet
+     * Test case for apiV1MarketsTestGet
      *
      * .
      *
      */
-    public function testApiMarketsSummaryGet()
+    public function testApiV1MarketsTestGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsTestGet
+     * Test case for apiV1MarketsTickerGet
      *
      * .
      *
      */
-    public function testApiMarketsTestGet()
+    public function testApiV1MarketsTickerGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsTickerGet
+     * Test case for apiV1MarketsTickersGet
      *
      * .
      *
      */
-    public function testApiMarketsTickerGet()
+    public function testApiV1MarketsTickersGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiMarketsTickersGet
+     * Test case for apiV1MarketsTradesPairGet
      *
      * .
      *
      */
-    public function testApiMarketsTickersGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiMarketsTradesPairGet
-     *
-     * .
-     *
-     */
-    public function testApiMarketsTradesPairGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsAssetsGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsAssetsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsCurrenciesGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsCurrenciesGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsCurrencyInfoGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsCurrencyInfoGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsHistoryGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsHistoryGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsListingRequestPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsListingRequestPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsOrderbookGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsOrderbookGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsOrdersPairGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsOrdersPairGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsSummaryGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsSummaryGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsTestGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsTestGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsTickerGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsTickerGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsTickersGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsTickersGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionMarketsTradesPairGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionMarketsTradesPairGet()
+    public function testApiV1MarketsTradesPairGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

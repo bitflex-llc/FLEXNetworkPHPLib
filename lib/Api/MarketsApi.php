@@ -116,30 +116,30 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsAssetsGet
+     * Operation apiV1MarketsAssetsGet
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,\OpenAPI\Client\Model\AssetsResponseModel]
      */
-    public function apiMarketsAssetsGet()
+    public function apiV1MarketsAssetsGet()
     {
-        list($response) = $this->apiMarketsAssetsGetWithHttpInfo();
+        list($response) = $this->apiV1MarketsAssetsGetWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation apiMarketsAssetsGetWithHttpInfo
+     * Operation apiV1MarketsAssetsGetWithHttpInfo
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,\OpenAPI\Client\Model\AssetsResponseModel], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsAssetsGetWithHttpInfo()
+    public function apiV1MarketsAssetsGetWithHttpInfo()
     {
-        $request = $this->apiMarketsAssetsGetRequest();
+        $request = $this->apiV1MarketsAssetsGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -215,7 +215,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsAssetsGetAsync
+     * Operation apiV1MarketsAssetsGetAsync
      *
      * 
      *
@@ -223,9 +223,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsAssetsGetAsync()
+    public function apiV1MarketsAssetsGetAsync()
     {
-        return $this->apiMarketsAssetsGetAsyncWithHttpInfo()
+        return $this->apiV1MarketsAssetsGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -234,7 +234,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsAssetsGetAsyncWithHttpInfo
+     * Operation apiV1MarketsAssetsGetAsyncWithHttpInfo
      *
      * 
      *
@@ -242,10 +242,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsAssetsGetAsyncWithHttpInfo()
+    public function apiV1MarketsAssetsGetAsyncWithHttpInfo()
     {
         $returnType = 'map[string,\OpenAPI\Client\Model\AssetsResponseModel]';
-        $request = $this->apiMarketsAssetsGetRequest();
+        $request = $this->apiV1MarketsAssetsGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -282,16 +282,16 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsAssetsGet'
+     * Create request for operation 'apiV1MarketsAssetsGet'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsAssetsGetRequest()
+    public function apiV1MarketsAssetsGetRequest()
     {
 
-        $resourcePath = '/api/Markets/assets';
+        $resourcePath = '/api/v1/markets/assets';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -369,30 +369,30 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsCurrenciesGet
+     * Operation apiV1MarketsCurrenciesGet
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[]
      */
-    public function apiMarketsCurrenciesGet()
+    public function apiV1MarketsCurrenciesGet()
     {
-        list($response) = $this->apiMarketsCurrenciesGetWithHttpInfo();
+        list($response) = $this->apiV1MarketsCurrenciesGetWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation apiMarketsCurrenciesGetWithHttpInfo
+     * Operation apiV1MarketsCurrenciesGetWithHttpInfo
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsCurrenciesGetWithHttpInfo()
+    public function apiV1MarketsCurrenciesGetWithHttpInfo()
     {
-        $request = $this->apiMarketsCurrenciesGetRequest();
+        $request = $this->apiV1MarketsCurrenciesGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -468,7 +468,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsCurrenciesGetAsync
+     * Operation apiV1MarketsCurrenciesGetAsync
      *
      * 
      *
@@ -476,9 +476,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsCurrenciesGetAsync()
+    public function apiV1MarketsCurrenciesGetAsync()
     {
-        return $this->apiMarketsCurrenciesGetAsyncWithHttpInfo()
+        return $this->apiV1MarketsCurrenciesGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -487,7 +487,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsCurrenciesGetAsyncWithHttpInfo
+     * Operation apiV1MarketsCurrenciesGetAsyncWithHttpInfo
      *
      * 
      *
@@ -495,10 +495,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsCurrenciesGetAsyncWithHttpInfo()
+    public function apiV1MarketsCurrenciesGetAsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[]';
-        $request = $this->apiMarketsCurrenciesGetRequest();
+        $request = $this->apiV1MarketsCurrenciesGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -535,16 +535,16 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsCurrenciesGet'
+     * Create request for operation 'apiV1MarketsCurrenciesGet'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsCurrenciesGetRequest()
+    public function apiV1MarketsCurrenciesGetRequest()
     {
 
-        $resourcePath = '/api/Markets/currencies';
+        $resourcePath = '/api/v1/markets/currencies';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -622,7 +622,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsCurrencyInfoGet
+     * Operation apiV1MarketsCurrencyinfoGet
      *
      * @param  string $currency currency (optional)
      *
@@ -630,14 +630,14 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CryptoCurrency
      */
-    public function apiMarketsCurrencyInfoGet($currency = null)
+    public function apiV1MarketsCurrencyinfoGet($currency = null)
     {
-        list($response) = $this->apiMarketsCurrencyInfoGetWithHttpInfo($currency);
+        list($response) = $this->apiV1MarketsCurrencyinfoGetWithHttpInfo($currency);
         return $response;
     }
 
     /**
-     * Operation apiMarketsCurrencyInfoGetWithHttpInfo
+     * Operation apiV1MarketsCurrencyinfoGetWithHttpInfo
      *
      * @param  string $currency (optional)
      *
@@ -645,9 +645,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CryptoCurrency, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsCurrencyInfoGetWithHttpInfo($currency = null)
+    public function apiV1MarketsCurrencyinfoGetWithHttpInfo($currency = null)
     {
-        $request = $this->apiMarketsCurrencyInfoGetRequest($currency);
+        $request = $this->apiV1MarketsCurrencyinfoGetRequest($currency);
 
         try {
             $options = $this->createHttpClientOption();
@@ -723,7 +723,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsCurrencyInfoGetAsync
+     * Operation apiV1MarketsCurrencyinfoGetAsync
      *
      * 
      *
@@ -732,9 +732,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsCurrencyInfoGetAsync($currency = null)
+    public function apiV1MarketsCurrencyinfoGetAsync($currency = null)
     {
-        return $this->apiMarketsCurrencyInfoGetAsyncWithHttpInfo($currency)
+        return $this->apiV1MarketsCurrencyinfoGetAsyncWithHttpInfo($currency)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -743,7 +743,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsCurrencyInfoGetAsyncWithHttpInfo
+     * Operation apiV1MarketsCurrencyinfoGetAsyncWithHttpInfo
      *
      * 
      *
@@ -752,10 +752,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsCurrencyInfoGetAsyncWithHttpInfo($currency = null)
+    public function apiV1MarketsCurrencyinfoGetAsyncWithHttpInfo($currency = null)
     {
         $returnType = '\OpenAPI\Client\Model\CryptoCurrency';
-        $request = $this->apiMarketsCurrencyInfoGetRequest($currency);
+        $request = $this->apiV1MarketsCurrencyinfoGetRequest($currency);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -792,17 +792,17 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsCurrencyInfoGet'
+     * Create request for operation 'apiV1MarketsCurrencyinfoGet'
      *
      * @param  string $currency (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsCurrencyInfoGetRequest($currency = null)
+    public function apiV1MarketsCurrencyinfoGetRequest($currency = null)
     {
 
-        $resourcePath = '/api/Markets/currencyInfo';
+        $resourcePath = '/api/v1/markets/currencyinfo';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -891,7 +891,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsGet
+     * Operation apiV1MarketsGet
      *
      * @param  string $fingerprint fingerprint (optional)
      *
@@ -899,14 +899,14 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetMarketsResponse
      */
-    public function apiMarketsGet($fingerprint = null)
+    public function apiV1MarketsGet($fingerprint = null)
     {
-        list($response) = $this->apiMarketsGetWithHttpInfo($fingerprint);
+        list($response) = $this->apiV1MarketsGetWithHttpInfo($fingerprint);
         return $response;
     }
 
     /**
-     * Operation apiMarketsGetWithHttpInfo
+     * Operation apiV1MarketsGetWithHttpInfo
      *
      * @param  string $fingerprint (optional)
      *
@@ -914,9 +914,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetMarketsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsGetWithHttpInfo($fingerprint = null)
+    public function apiV1MarketsGetWithHttpInfo($fingerprint = null)
     {
-        $request = $this->apiMarketsGetRequest($fingerprint);
+        $request = $this->apiV1MarketsGetRequest($fingerprint);
 
         try {
             $options = $this->createHttpClientOption();
@@ -992,7 +992,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsGetAsync
+     * Operation apiV1MarketsGetAsync
      *
      * 
      *
@@ -1001,9 +1001,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsGetAsync($fingerprint = null)
+    public function apiV1MarketsGetAsync($fingerprint = null)
     {
-        return $this->apiMarketsGetAsyncWithHttpInfo($fingerprint)
+        return $this->apiV1MarketsGetAsyncWithHttpInfo($fingerprint)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1012,7 +1012,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsGetAsyncWithHttpInfo
+     * Operation apiV1MarketsGetAsyncWithHttpInfo
      *
      * 
      *
@@ -1021,10 +1021,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsGetAsyncWithHttpInfo($fingerprint = null)
+    public function apiV1MarketsGetAsyncWithHttpInfo($fingerprint = null)
     {
         $returnType = '\OpenAPI\Client\Model\GetMarketsResponse';
-        $request = $this->apiMarketsGetRequest($fingerprint);
+        $request = $this->apiV1MarketsGetRequest($fingerprint);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1061,17 +1061,17 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsGet'
+     * Create request for operation 'apiV1MarketsGet'
      *
      * @param  string $fingerprint (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsGetRequest($fingerprint = null)
+    public function apiV1MarketsGetRequest($fingerprint = null)
     {
 
-        $resourcePath = '/api/Markets';
+        $resourcePath = '/api/v1/markets';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1160,7 +1160,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsHistoryGet
+     * Operation apiV1MarketsHistoryGet
      *
      * @param  string $pair pair (optional)
      *
@@ -1168,14 +1168,14 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetTradeHistoryResponse[]
      */
-    public function apiMarketsHistoryGet($pair = null)
+    public function apiV1MarketsHistoryGet($pair = null)
     {
-        list($response) = $this->apiMarketsHistoryGetWithHttpInfo($pair);
+        list($response) = $this->apiV1MarketsHistoryGetWithHttpInfo($pair);
         return $response;
     }
 
     /**
-     * Operation apiMarketsHistoryGetWithHttpInfo
+     * Operation apiV1MarketsHistoryGetWithHttpInfo
      *
      * @param  string $pair (optional)
      *
@@ -1183,9 +1183,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetTradeHistoryResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsHistoryGetWithHttpInfo($pair = null)
+    public function apiV1MarketsHistoryGetWithHttpInfo($pair = null)
     {
-        $request = $this->apiMarketsHistoryGetRequest($pair);
+        $request = $this->apiV1MarketsHistoryGetRequest($pair);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1261,7 +1261,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsHistoryGetAsync
+     * Operation apiV1MarketsHistoryGetAsync
      *
      * 
      *
@@ -1270,9 +1270,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsHistoryGetAsync($pair = null)
+    public function apiV1MarketsHistoryGetAsync($pair = null)
     {
-        return $this->apiMarketsHistoryGetAsyncWithHttpInfo($pair)
+        return $this->apiV1MarketsHistoryGetAsyncWithHttpInfo($pair)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1281,7 +1281,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsHistoryGetAsyncWithHttpInfo
+     * Operation apiV1MarketsHistoryGetAsyncWithHttpInfo
      *
      * 
      *
@@ -1290,10 +1290,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsHistoryGetAsyncWithHttpInfo($pair = null)
+    public function apiV1MarketsHistoryGetAsyncWithHttpInfo($pair = null)
     {
         $returnType = '\OpenAPI\Client\Model\GetTradeHistoryResponse[]';
-        $request = $this->apiMarketsHistoryGetRequest($pair);
+        $request = $this->apiV1MarketsHistoryGetRequest($pair);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1330,17 +1330,17 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsHistoryGet'
+     * Create request for operation 'apiV1MarketsHistoryGet'
      *
      * @param  string $pair (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsHistoryGetRequest($pair = null)
+    public function apiV1MarketsHistoryGetRequest($pair = null)
     {
 
-        $resourcePath = '/api/Markets/history';
+        $resourcePath = '/api/v1/markets/history';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1429,287 +1429,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsListingRequestPost
-     *
-     * @param  string $re_captcha_token re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request listing_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CreateListingRequestResponse
-     */
-    public function apiMarketsListingRequestPost($re_captcha_token = null, $listing_request = null)
-    {
-        list($response) = $this->apiMarketsListingRequestPostWithHttpInfo($re_captcha_token, $listing_request);
-        return $response;
-    }
-
-    /**
-     * Operation apiMarketsListingRequestPostWithHttpInfo
-     *
-     * @param  string $re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CreateListingRequestResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiMarketsListingRequestPostWithHttpInfo($re_captcha_token = null, $listing_request = null)
-    {
-        $request = $this->apiMarketsListingRequestPostRequest($re_captcha_token, $listing_request);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\CreateListingRequestResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CreateListingRequestResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\CreateListingRequestResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CreateListingRequestResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiMarketsListingRequestPostAsync
-     *
-     * 
-     *
-     * @param  string $re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiMarketsListingRequestPostAsync($re_captcha_token = null, $listing_request = null)
-    {
-        return $this->apiMarketsListingRequestPostAsyncWithHttpInfo($re_captcha_token, $listing_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiMarketsListingRequestPostAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiMarketsListingRequestPostAsyncWithHttpInfo($re_captcha_token = null, $listing_request = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\CreateListingRequestResponse';
-        $request = $this->apiMarketsListingRequestPostRequest($re_captcha_token, $listing_request);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiMarketsListingRequestPost'
-     *
-     * @param  string $re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiMarketsListingRequestPostRequest($re_captcha_token = null, $listing_request = null)
-    {
-
-        $resourcePath = '/api/Markets/ListingRequest';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($re_captcha_token !== null) {
-            if('form' === 'form' && is_array($re_captcha_token)) {
-                foreach($re_captcha_token as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['reCaptchaToken'] = $re_captcha_token;
-            }
-        }
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($listing_request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($listing_request));
-            } else {
-                $httpBody = $listing_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiMarketsOrderbookGet
+     * Operation apiV1MarketsOrderbookGet
      *
      * @param  string $pair pair (optional)
      *
@@ -1717,14 +1437,14 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrdersGetViewModel
      */
-    public function apiMarketsOrderbookGet($pair = null)
+    public function apiV1MarketsOrderbookGet($pair = null)
     {
-        list($response) = $this->apiMarketsOrderbookGetWithHttpInfo($pair);
+        list($response) = $this->apiV1MarketsOrderbookGetWithHttpInfo($pair);
         return $response;
     }
 
     /**
-     * Operation apiMarketsOrderbookGetWithHttpInfo
+     * Operation apiV1MarketsOrderbookGetWithHttpInfo
      *
      * @param  string $pair (optional)
      *
@@ -1732,9 +1452,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrdersGetViewModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsOrderbookGetWithHttpInfo($pair = null)
+    public function apiV1MarketsOrderbookGetWithHttpInfo($pair = null)
     {
-        $request = $this->apiMarketsOrderbookGetRequest($pair);
+        $request = $this->apiV1MarketsOrderbookGetRequest($pair);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1810,7 +1530,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsOrderbookGetAsync
+     * Operation apiV1MarketsOrderbookGetAsync
      *
      * 
      *
@@ -1819,9 +1539,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsOrderbookGetAsync($pair = null)
+    public function apiV1MarketsOrderbookGetAsync($pair = null)
     {
-        return $this->apiMarketsOrderbookGetAsyncWithHttpInfo($pair)
+        return $this->apiV1MarketsOrderbookGetAsyncWithHttpInfo($pair)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1830,7 +1550,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsOrderbookGetAsyncWithHttpInfo
+     * Operation apiV1MarketsOrderbookGetAsyncWithHttpInfo
      *
      * 
      *
@@ -1839,10 +1559,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsOrderbookGetAsyncWithHttpInfo($pair = null)
+    public function apiV1MarketsOrderbookGetAsyncWithHttpInfo($pair = null)
     {
         $returnType = '\OpenAPI\Client\Model\OrdersGetViewModel';
-        $request = $this->apiMarketsOrderbookGetRequest($pair);
+        $request = $this->apiV1MarketsOrderbookGetRequest($pair);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1879,17 +1599,17 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsOrderbookGet'
+     * Create request for operation 'apiV1MarketsOrderbookGet'
      *
      * @param  string $pair (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsOrderbookGetRequest($pair = null)
+    public function apiV1MarketsOrderbookGetRequest($pair = null)
     {
 
-        $resourcePath = '/api/Markets/orderbook';
+        $resourcePath = '/api/v1/markets/orderbook';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1978,7 +1698,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsOrdersPairGet
+     * Operation apiV1MarketsOrdersPairGet
      *
      * @param  string $pair pair (required)
      * @param  int $depth depth (optional, default to 0)
@@ -1988,14 +1708,14 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrderbookResponseModel
      */
-    public function apiMarketsOrdersPairGet($pair, $depth = 0, $level = 2)
+    public function apiV1MarketsOrdersPairGet($pair, $depth = 0, $level = 2)
     {
-        list($response) = $this->apiMarketsOrdersPairGetWithHttpInfo($pair, $depth, $level);
+        list($response) = $this->apiV1MarketsOrdersPairGetWithHttpInfo($pair, $depth, $level);
         return $response;
     }
 
     /**
-     * Operation apiMarketsOrdersPairGetWithHttpInfo
+     * Operation apiV1MarketsOrdersPairGetWithHttpInfo
      *
      * @param  string $pair (required)
      * @param  int $depth (optional, default to 0)
@@ -2005,9 +1725,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrderbookResponseModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsOrdersPairGetWithHttpInfo($pair, $depth = 0, $level = 2)
+    public function apiV1MarketsOrdersPairGetWithHttpInfo($pair, $depth = 0, $level = 2)
     {
-        $request = $this->apiMarketsOrdersPairGetRequest($pair, $depth, $level);
+        $request = $this->apiV1MarketsOrdersPairGetRequest($pair, $depth, $level);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2083,7 +1803,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsOrdersPairGetAsync
+     * Operation apiV1MarketsOrdersPairGetAsync
      *
      * 
      *
@@ -2094,9 +1814,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsOrdersPairGetAsync($pair, $depth = 0, $level = 2)
+    public function apiV1MarketsOrdersPairGetAsync($pair, $depth = 0, $level = 2)
     {
-        return $this->apiMarketsOrdersPairGetAsyncWithHttpInfo($pair, $depth, $level)
+        return $this->apiV1MarketsOrdersPairGetAsyncWithHttpInfo($pair, $depth, $level)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2105,7 +1825,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsOrdersPairGetAsyncWithHttpInfo
+     * Operation apiV1MarketsOrdersPairGetAsyncWithHttpInfo
      *
      * 
      *
@@ -2116,10 +1836,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsOrdersPairGetAsyncWithHttpInfo($pair, $depth = 0, $level = 2)
+    public function apiV1MarketsOrdersPairGetAsyncWithHttpInfo($pair, $depth = 0, $level = 2)
     {
         $returnType = '\OpenAPI\Client\Model\OrderbookResponseModel';
-        $request = $this->apiMarketsOrdersPairGetRequest($pair, $depth, $level);
+        $request = $this->apiV1MarketsOrdersPairGetRequest($pair, $depth, $level);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2156,7 +1876,7 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsOrdersPairGet'
+     * Create request for operation 'apiV1MarketsOrdersPairGet'
      *
      * @param  string $pair (required)
      * @param  int $depth (optional, default to 0)
@@ -2165,23 +1885,23 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsOrdersPairGetRequest($pair, $depth = 0, $level = 2)
+    public function apiV1MarketsOrdersPairGetRequest($pair, $depth = 0, $level = 2)
     {
         // verify the required parameter 'pair' is set
         if ($pair === null || (is_array($pair) && count($pair) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $pair when calling apiMarketsOrdersPairGet'
+                'Missing the required parameter $pair when calling apiV1MarketsOrdersPairGet'
             );
         }
         if ($level !== null && $level > 3) {
-            throw new \InvalidArgumentException('invalid value for "$level" when calling MarketsApi.apiMarketsOrdersPairGet, must be smaller than or equal to 3.');
+            throw new \InvalidArgumentException('invalid value for "$level" when calling MarketsApi.apiV1MarketsOrdersPairGet, must be smaller than or equal to 3.');
         }
         if ($level !== null && $level < 1) {
-            throw new \InvalidArgumentException('invalid value for "$level" when calling MarketsApi.apiMarketsOrdersPairGet, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for "$level" when calling MarketsApi.apiV1MarketsOrdersPairGet, must be bigger than or equal to 1.');
         }
 
 
-        $resourcePath = '/api/Markets/orders/{pair}';
+        $resourcePath = '/api/v1/markets/orders/{pair}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2289,30 +2009,30 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsSummaryGet
+     * Operation apiV1MarketsSummaryGet
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\SummaryResponseModel[]
      */
-    public function apiMarketsSummaryGet()
+    public function apiV1MarketsSummaryGet()
     {
-        list($response) = $this->apiMarketsSummaryGetWithHttpInfo();
+        list($response) = $this->apiV1MarketsSummaryGetWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation apiMarketsSummaryGetWithHttpInfo
+     * Operation apiV1MarketsSummaryGetWithHttpInfo
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\SummaryResponseModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsSummaryGetWithHttpInfo()
+    public function apiV1MarketsSummaryGetWithHttpInfo()
     {
-        $request = $this->apiMarketsSummaryGetRequest();
+        $request = $this->apiV1MarketsSummaryGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2388,7 +2108,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsSummaryGetAsync
+     * Operation apiV1MarketsSummaryGetAsync
      *
      * 
      *
@@ -2396,9 +2116,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsSummaryGetAsync()
+    public function apiV1MarketsSummaryGetAsync()
     {
-        return $this->apiMarketsSummaryGetAsyncWithHttpInfo()
+        return $this->apiV1MarketsSummaryGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2407,7 +2127,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsSummaryGetAsyncWithHttpInfo
+     * Operation apiV1MarketsSummaryGetAsyncWithHttpInfo
      *
      * 
      *
@@ -2415,10 +2135,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsSummaryGetAsyncWithHttpInfo()
+    public function apiV1MarketsSummaryGetAsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\SummaryResponseModel[]';
-        $request = $this->apiMarketsSummaryGetRequest();
+        $request = $this->apiV1MarketsSummaryGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2455,16 +2175,16 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsSummaryGet'
+     * Create request for operation 'apiV1MarketsSummaryGet'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsSummaryGetRequest()
+    public function apiV1MarketsSummaryGetRequest()
     {
 
-        $resourcePath = '/api/Markets/summary';
+        $resourcePath = '/api/v1/markets/summary';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2542,7 +2262,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTestGet
+     * Operation apiV1MarketsTestGet
      *
      * @param  string $fingerprint fingerprint (optional)
      *
@@ -2550,13 +2270,13 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiMarketsTestGet($fingerprint = null)
+    public function apiV1MarketsTestGet($fingerprint = null)
     {
-        $this->apiMarketsTestGetWithHttpInfo($fingerprint);
+        $this->apiV1MarketsTestGetWithHttpInfo($fingerprint);
     }
 
     /**
-     * Operation apiMarketsTestGetWithHttpInfo
+     * Operation apiV1MarketsTestGetWithHttpInfo
      *
      * @param  string $fingerprint (optional)
      *
@@ -2564,9 +2284,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsTestGetWithHttpInfo($fingerprint = null)
+    public function apiV1MarketsTestGetWithHttpInfo($fingerprint = null)
     {
-        $request = $this->apiMarketsTestGetRequest($fingerprint);
+        $request = $this->apiV1MarketsTestGetRequest($fingerprint);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2606,7 +2326,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTestGetAsync
+     * Operation apiV1MarketsTestGetAsync
      *
      * 
      *
@@ -2615,9 +2335,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsTestGetAsync($fingerprint = null)
+    public function apiV1MarketsTestGetAsync($fingerprint = null)
     {
-        return $this->apiMarketsTestGetAsyncWithHttpInfo($fingerprint)
+        return $this->apiV1MarketsTestGetAsyncWithHttpInfo($fingerprint)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2626,7 +2346,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTestGetAsyncWithHttpInfo
+     * Operation apiV1MarketsTestGetAsyncWithHttpInfo
      *
      * 
      *
@@ -2635,10 +2355,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsTestGetAsyncWithHttpInfo($fingerprint = null)
+    public function apiV1MarketsTestGetAsyncWithHttpInfo($fingerprint = null)
     {
         $returnType = '';
-        $request = $this->apiMarketsTestGetRequest($fingerprint);
+        $request = $this->apiV1MarketsTestGetRequest($fingerprint);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2664,17 +2384,17 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsTestGet'
+     * Create request for operation 'apiV1MarketsTestGet'
      *
      * @param  string $fingerprint (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsTestGetRequest($fingerprint = null)
+    public function apiV1MarketsTestGetRequest($fingerprint = null)
     {
 
-        $resourcePath = '/api/Markets/test';
+        $resourcePath = '/api/v1/markets/test';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2763,30 +2483,30 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTickerGet
+     * Operation apiV1MarketsTickerGet
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,\OpenAPI\Client\Model\TickerResponseModel]
      */
-    public function apiMarketsTickerGet()
+    public function apiV1MarketsTickerGet()
     {
-        list($response) = $this->apiMarketsTickerGetWithHttpInfo();
+        list($response) = $this->apiV1MarketsTickerGetWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation apiMarketsTickerGetWithHttpInfo
+     * Operation apiV1MarketsTickerGetWithHttpInfo
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,\OpenAPI\Client\Model\TickerResponseModel], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsTickerGetWithHttpInfo()
+    public function apiV1MarketsTickerGetWithHttpInfo()
     {
-        $request = $this->apiMarketsTickerGetRequest();
+        $request = $this->apiV1MarketsTickerGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2862,7 +2582,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTickerGetAsync
+     * Operation apiV1MarketsTickerGetAsync
      *
      * 
      *
@@ -2870,9 +2590,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsTickerGetAsync()
+    public function apiV1MarketsTickerGetAsync()
     {
-        return $this->apiMarketsTickerGetAsyncWithHttpInfo()
+        return $this->apiV1MarketsTickerGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2881,7 +2601,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTickerGetAsyncWithHttpInfo
+     * Operation apiV1MarketsTickerGetAsyncWithHttpInfo
      *
      * 
      *
@@ -2889,10 +2609,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsTickerGetAsyncWithHttpInfo()
+    public function apiV1MarketsTickerGetAsyncWithHttpInfo()
     {
         $returnType = 'map[string,\OpenAPI\Client\Model\TickerResponseModel]';
-        $request = $this->apiMarketsTickerGetRequest();
+        $request = $this->apiV1MarketsTickerGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2929,16 +2649,16 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsTickerGet'
+     * Create request for operation 'apiV1MarketsTickerGet'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsTickerGetRequest()
+    public function apiV1MarketsTickerGetRequest()
     {
 
-        $resourcePath = '/api/Markets/ticker';
+        $resourcePath = '/api/v1/markets/ticker';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3016,30 +2736,30 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTickersGet
+     * Operation apiV1MarketsTickersGet
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetTickersResponse
      */
-    public function apiMarketsTickersGet()
+    public function apiV1MarketsTickersGet()
     {
-        list($response) = $this->apiMarketsTickersGetWithHttpInfo();
+        list($response) = $this->apiV1MarketsTickersGetWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation apiMarketsTickersGetWithHttpInfo
+     * Operation apiV1MarketsTickersGetWithHttpInfo
      *
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetTickersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsTickersGetWithHttpInfo()
+    public function apiV1MarketsTickersGetWithHttpInfo()
     {
-        $request = $this->apiMarketsTickersGetRequest();
+        $request = $this->apiV1MarketsTickersGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3115,7 +2835,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTickersGetAsync
+     * Operation apiV1MarketsTickersGetAsync
      *
      * 
      *
@@ -3123,9 +2843,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsTickersGetAsync()
+    public function apiV1MarketsTickersGetAsync()
     {
-        return $this->apiMarketsTickersGetAsyncWithHttpInfo()
+        return $this->apiV1MarketsTickersGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3134,7 +2854,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTickersGetAsyncWithHttpInfo
+     * Operation apiV1MarketsTickersGetAsyncWithHttpInfo
      *
      * 
      *
@@ -3142,10 +2862,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsTickersGetAsyncWithHttpInfo()
+    public function apiV1MarketsTickersGetAsyncWithHttpInfo()
     {
         $returnType = '\OpenAPI\Client\Model\GetTickersResponse';
-        $request = $this->apiMarketsTickersGetRequest();
+        $request = $this->apiV1MarketsTickersGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3182,16 +2902,16 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsTickersGet'
+     * Create request for operation 'apiV1MarketsTickersGet'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsTickersGetRequest()
+    public function apiV1MarketsTickersGetRequest()
     {
 
-        $resourcePath = '/api/Markets/tickers';
+        $resourcePath = '/api/v1/markets/tickers';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3269,7 +2989,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTradesPairGet
+     * Operation apiV1MarketsTradesPairGet
      *
      * @param  string $pair pair (required)
      *
@@ -3277,14 +2997,14 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\TradesResponseModel[]
      */
-    public function apiMarketsTradesPairGet($pair)
+    public function apiV1MarketsTradesPairGet($pair)
     {
-        list($response) = $this->apiMarketsTradesPairGetWithHttpInfo($pair);
+        list($response) = $this->apiV1MarketsTradesPairGetWithHttpInfo($pair);
         return $response;
     }
 
     /**
-     * Operation apiMarketsTradesPairGetWithHttpInfo
+     * Operation apiV1MarketsTradesPairGetWithHttpInfo
      *
      * @param  string $pair (required)
      *
@@ -3292,9 +3012,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\TradesResponseModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMarketsTradesPairGetWithHttpInfo($pair)
+    public function apiV1MarketsTradesPairGetWithHttpInfo($pair)
     {
-        $request = $this->apiMarketsTradesPairGetRequest($pair);
+        $request = $this->apiV1MarketsTradesPairGetRequest($pair);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3370,7 +3090,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTradesPairGetAsync
+     * Operation apiV1MarketsTradesPairGetAsync
      *
      * 
      *
@@ -3379,9 +3099,9 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsTradesPairGetAsync($pair)
+    public function apiV1MarketsTradesPairGetAsync($pair)
     {
-        return $this->apiMarketsTradesPairGetAsyncWithHttpInfo($pair)
+        return $this->apiV1MarketsTradesPairGetAsyncWithHttpInfo($pair)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3390,7 +3110,7 @@ class MarketsApi
     }
 
     /**
-     * Operation apiMarketsTradesPairGetAsyncWithHttpInfo
+     * Operation apiV1MarketsTradesPairGetAsyncWithHttpInfo
      *
      * 
      *
@@ -3399,10 +3119,10 @@ class MarketsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMarketsTradesPairGetAsyncWithHttpInfo($pair)
+    public function apiV1MarketsTradesPairGetAsyncWithHttpInfo($pair)
     {
         $returnType = '\OpenAPI\Client\Model\TradesResponseModel[]';
-        $request = $this->apiMarketsTradesPairGetRequest($pair);
+        $request = $this->apiV1MarketsTradesPairGetRequest($pair);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3439,23 +3159,23 @@ class MarketsApi
     }
 
     /**
-     * Create request for operation 'apiMarketsTradesPairGet'
+     * Create request for operation 'apiV1MarketsTradesPairGet'
      *
      * @param  string $pair (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiMarketsTradesPairGetRequest($pair)
+    public function apiV1MarketsTradesPairGetRequest($pair)
     {
         // verify the required parameter 'pair' is set
         if ($pair === null || (is_array($pair) && count($pair) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $pair when calling apiMarketsTradesPairGet'
+                'Missing the required parameter $pair when calling apiV1MarketsTradesPairGet'
             );
         }
 
-        $resourcePath = '/api/Markets/trades/{pair}';
+        $resourcePath = '/api/v1/markets/trades/{pair}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3469,3678 +3189,6 @@ class MarketsApi
             $resourcePath = str_replace(
                 '{' . 'pair' . '}',
                 ObjectSerializer::toPathValue($pair),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsAssetsGet
-     *
-     * @param  string $version version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return map[string,\OpenAPI\Client\Model\AssetsResponseModel]
-     */
-    public function apiVversionMarketsAssetsGet($version)
-    {
-        list($response) = $this->apiVversionMarketsAssetsGetWithHttpInfo($version);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsAssetsGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of map[string,\OpenAPI\Client\Model\AssetsResponseModel], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsAssetsGetWithHttpInfo($version)
-    {
-        $request = $this->apiVversionMarketsAssetsGetRequest($version);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('map[string,\OpenAPI\Client\Model\AssetsResponseModel]' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'map[string,\OpenAPI\Client\Model\AssetsResponseModel]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = 'map[string,\OpenAPI\Client\Model\AssetsResponseModel]';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'map[string,\OpenAPI\Client\Model\AssetsResponseModel]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsAssetsGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsAssetsGetAsync($version)
-    {
-        return $this->apiVversionMarketsAssetsGetAsyncWithHttpInfo($version)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsAssetsGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsAssetsGetAsyncWithHttpInfo($version)
-    {
-        $returnType = 'map[string,\OpenAPI\Client\Model\AssetsResponseModel]';
-        $request = $this->apiVversionMarketsAssetsGetRequest($version);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsAssetsGet'
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsAssetsGetRequest($version)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsAssetsGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/assets';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsCurrenciesGet
-     *
-     * @param  string $version version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[]
-     */
-    public function apiVversionMarketsCurrenciesGet($version)
-    {
-        list($response) = $this->apiVversionMarketsCurrenciesGetWithHttpInfo($version);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsCurrenciesGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsCurrenciesGetWithHttpInfo($version)
-    {
-        $request = $this->apiVversionMarketsCurrenciesGetRequest($version);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[]' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[]';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsCurrenciesGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsCurrenciesGetAsync($version)
-    {
-        return $this->apiVversionMarketsCurrenciesGetAsyncWithHttpInfo($version)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsCurrenciesGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsCurrenciesGetAsyncWithHttpInfo($version)
-    {
-        $returnType = '\OpenAPI\Client\Model\GetApiMarketsCurrenciesResponse[]';
-        $request = $this->apiVversionMarketsCurrenciesGetRequest($version);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsCurrenciesGet'
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsCurrenciesGetRequest($version)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsCurrenciesGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/currencies';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsCurrencyInfoGet
-     *
-     * @param  string $version version (required)
-     * @param  string $currency currency (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CryptoCurrency
-     */
-    public function apiVversionMarketsCurrencyInfoGet($version, $currency = null)
-    {
-        list($response) = $this->apiVversionMarketsCurrencyInfoGetWithHttpInfo($version, $currency);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsCurrencyInfoGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  string $currency (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CryptoCurrency, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsCurrencyInfoGetWithHttpInfo($version, $currency = null)
-    {
-        $request = $this->apiVversionMarketsCurrencyInfoGetRequest($version, $currency);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\CryptoCurrency' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CryptoCurrency', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\CryptoCurrency';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CryptoCurrency',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsCurrencyInfoGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $currency (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsCurrencyInfoGetAsync($version, $currency = null)
-    {
-        return $this->apiVversionMarketsCurrencyInfoGetAsyncWithHttpInfo($version, $currency)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsCurrencyInfoGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $currency (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsCurrencyInfoGetAsyncWithHttpInfo($version, $currency = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\CryptoCurrency';
-        $request = $this->apiVversionMarketsCurrencyInfoGetRequest($version, $currency);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsCurrencyInfoGet'
-     *
-     * @param  string $version (required)
-     * @param  string $currency (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsCurrencyInfoGetRequest($version, $currency = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsCurrencyInfoGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/currencyInfo';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($currency !== null) {
-            if('form' === 'form' && is_array($currency)) {
-                foreach($currency as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['currency'] = $currency;
-            }
-        }
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsGet
-     *
-     * @param  string $version version (required)
-     * @param  string $fingerprint fingerprint (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GetMarketsResponse
-     */
-    public function apiVversionMarketsGet($version, $fingerprint = null)
-    {
-        list($response) = $this->apiVversionMarketsGetWithHttpInfo($version, $fingerprint);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  string $fingerprint (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GetMarketsResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsGetWithHttpInfo($version, $fingerprint = null)
-    {
-        $request = $this->apiVversionMarketsGetRequest($version, $fingerprint);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\GetMarketsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetMarketsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\GetMarketsResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetMarketsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $fingerprint (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsGetAsync($version, $fingerprint = null)
-    {
-        return $this->apiVversionMarketsGetAsyncWithHttpInfo($version, $fingerprint)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $fingerprint (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsGetAsyncWithHttpInfo($version, $fingerprint = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\GetMarketsResponse';
-        $request = $this->apiVversionMarketsGetRequest($version, $fingerprint);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsGet'
-     *
-     * @param  string $version (required)
-     * @param  string $fingerprint (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsGetRequest($version, $fingerprint = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($fingerprint !== null) {
-            if('form' === 'form' && is_array($fingerprint)) {
-                foreach($fingerprint as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['fingerprint'] = $fingerprint;
-            }
-        }
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsHistoryGet
-     *
-     * @param  string $version version (required)
-     * @param  string $pair pair (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GetTradeHistoryResponse[]
-     */
-    public function apiVversionMarketsHistoryGet($version, $pair = null)
-    {
-        list($response) = $this->apiVversionMarketsHistoryGetWithHttpInfo($version, $pair);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsHistoryGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  string $pair (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GetTradeHistoryResponse[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsHistoryGetWithHttpInfo($version, $pair = null)
-    {
-        $request = $this->apiVversionMarketsHistoryGetRequest($version, $pair);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\GetTradeHistoryResponse[]' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetTradeHistoryResponse[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\GetTradeHistoryResponse[]';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetTradeHistoryResponse[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsHistoryGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $pair (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsHistoryGetAsync($version, $pair = null)
-    {
-        return $this->apiVversionMarketsHistoryGetAsyncWithHttpInfo($version, $pair)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsHistoryGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $pair (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsHistoryGetAsyncWithHttpInfo($version, $pair = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\GetTradeHistoryResponse[]';
-        $request = $this->apiVversionMarketsHistoryGetRequest($version, $pair);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsHistoryGet'
-     *
-     * @param  string $version (required)
-     * @param  string $pair (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsHistoryGetRequest($version, $pair = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsHistoryGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/history';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($pair !== null) {
-            if('form' === 'form' && is_array($pair)) {
-                foreach($pair as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['pair'] = $pair;
-            }
-        }
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsListingRequestPost
-     *
-     * @param  string $version version (required)
-     * @param  string $re_captcha_token re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request listing_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CreateListingRequestResponse
-     */
-    public function apiVversionMarketsListingRequestPost($version, $re_captcha_token = null, $listing_request = null)
-    {
-        list($response) = $this->apiVversionMarketsListingRequestPostWithHttpInfo($version, $re_captcha_token, $listing_request);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsListingRequestPostWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  string $re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CreateListingRequestResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsListingRequestPostWithHttpInfo($version, $re_captcha_token = null, $listing_request = null)
-    {
-        $request = $this->apiVversionMarketsListingRequestPostRequest($version, $re_captcha_token, $listing_request);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\CreateListingRequestResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CreateListingRequestResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\CreateListingRequestResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CreateListingRequestResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsListingRequestPostAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsListingRequestPostAsync($version, $re_captcha_token = null, $listing_request = null)
-    {
-        return $this->apiVversionMarketsListingRequestPostAsyncWithHttpInfo($version, $re_captcha_token, $listing_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsListingRequestPostAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsListingRequestPostAsyncWithHttpInfo($version, $re_captcha_token = null, $listing_request = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\CreateListingRequestResponse';
-        $request = $this->apiVversionMarketsListingRequestPostRequest($version, $re_captcha_token, $listing_request);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsListingRequestPost'
-     *
-     * @param  string $version (required)
-     * @param  string $re_captcha_token (optional)
-     * @param  \OpenAPI\Client\Model\ListingRequest $listing_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsListingRequestPostRequest($version, $re_captcha_token = null, $listing_request = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsListingRequestPost'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/ListingRequest';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($re_captcha_token !== null) {
-            if('form' === 'form' && is_array($re_captcha_token)) {
-                foreach($re_captcha_token as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['reCaptchaToken'] = $re_captcha_token;
-            }
-        }
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($listing_request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($listing_request));
-            } else {
-                $httpBody = $listing_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsOrderbookGet
-     *
-     * @param  string $version version (required)
-     * @param  string $pair pair (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OrdersGetViewModel
-     */
-    public function apiVversionMarketsOrderbookGet($version, $pair = null)
-    {
-        list($response) = $this->apiVversionMarketsOrderbookGetWithHttpInfo($version, $pair);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsOrderbookGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  string $pair (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OrdersGetViewModel, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsOrderbookGetWithHttpInfo($version, $pair = null)
-    {
-        $request = $this->apiVversionMarketsOrderbookGetRequest($version, $pair);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\OrdersGetViewModel' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OrdersGetViewModel', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\OrdersGetViewModel';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OrdersGetViewModel',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsOrderbookGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $pair (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsOrderbookGetAsync($version, $pair = null)
-    {
-        return $this->apiVversionMarketsOrderbookGetAsyncWithHttpInfo($version, $pair)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsOrderbookGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $pair (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsOrderbookGetAsyncWithHttpInfo($version, $pair = null)
-    {
-        $returnType = '\OpenAPI\Client\Model\OrdersGetViewModel';
-        $request = $this->apiVversionMarketsOrderbookGetRequest($version, $pair);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsOrderbookGet'
-     *
-     * @param  string $version (required)
-     * @param  string $pair (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsOrderbookGetRequest($version, $pair = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsOrderbookGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/orderbook';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($pair !== null) {
-            if('form' === 'form' && is_array($pair)) {
-                foreach($pair as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['pair'] = $pair;
-            }
-        }
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsOrdersPairGet
-     *
-     * @param  string $pair pair (required)
-     * @param  string $version version (required)
-     * @param  int $depth depth (optional, default to 0)
-     * @param  int $level level (optional, default to 2)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OrderbookResponseModel
-     */
-    public function apiVversionMarketsOrdersPairGet($pair, $version, $depth = 0, $level = 2)
-    {
-        list($response) = $this->apiVversionMarketsOrdersPairGetWithHttpInfo($pair, $version, $depth, $level);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsOrdersPairGetWithHttpInfo
-     *
-     * @param  string $pair (required)
-     * @param  string $version (required)
-     * @param  int $depth (optional, default to 0)
-     * @param  int $level (optional, default to 2)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OrderbookResponseModel, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsOrdersPairGetWithHttpInfo($pair, $version, $depth = 0, $level = 2)
-    {
-        $request = $this->apiVversionMarketsOrdersPairGetRequest($pair, $version, $depth, $level);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\OrderbookResponseModel' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OrderbookResponseModel', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\OrderbookResponseModel';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OrderbookResponseModel',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsOrdersPairGetAsync
-     *
-     * 
-     *
-     * @param  string $pair (required)
-     * @param  string $version (required)
-     * @param  int $depth (optional, default to 0)
-     * @param  int $level (optional, default to 2)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsOrdersPairGetAsync($pair, $version, $depth = 0, $level = 2)
-    {
-        return $this->apiVversionMarketsOrdersPairGetAsyncWithHttpInfo($pair, $version, $depth, $level)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsOrdersPairGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $pair (required)
-     * @param  string $version (required)
-     * @param  int $depth (optional, default to 0)
-     * @param  int $level (optional, default to 2)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsOrdersPairGetAsyncWithHttpInfo($pair, $version, $depth = 0, $level = 2)
-    {
-        $returnType = '\OpenAPI\Client\Model\OrderbookResponseModel';
-        $request = $this->apiVversionMarketsOrdersPairGetRequest($pair, $version, $depth, $level);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsOrdersPairGet'
-     *
-     * @param  string $pair (required)
-     * @param  string $version (required)
-     * @param  int $depth (optional, default to 0)
-     * @param  int $level (optional, default to 2)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsOrdersPairGetRequest($pair, $version, $depth = 0, $level = 2)
-    {
-        // verify the required parameter 'pair' is set
-        if ($pair === null || (is_array($pair) && count($pair) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $pair when calling apiVversionMarketsOrdersPairGet'
-            );
-        }
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsOrdersPairGet'
-            );
-        }
-        if ($level !== null && $level > 3) {
-            throw new \InvalidArgumentException('invalid value for "$level" when calling MarketsApi.apiVversionMarketsOrdersPairGet, must be smaller than or equal to 3.');
-        }
-        if ($level !== null && $level < 1) {
-            throw new \InvalidArgumentException('invalid value for "$level" when calling MarketsApi.apiVversionMarketsOrdersPairGet, must be bigger than or equal to 1.');
-        }
-
-
-        $resourcePath = '/api/v{version}/Markets/orders/{pair}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($depth !== null) {
-            if('form' === 'form' && is_array($depth)) {
-                foreach($depth as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['Depth'] = $depth;
-            }
-        }
-        // query params
-        if ($level !== null) {
-            if('form' === 'form' && is_array($level)) {
-                foreach($level as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['Level'] = $level;
-            }
-        }
-
-
-        // path params
-        if ($pair !== null) {
-            $resourcePath = str_replace(
-                '{' . 'pair' . '}',
-                ObjectSerializer::toPathValue($pair),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsSummaryGet
-     *
-     * @param  string $version version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\SummaryResponseModel[]
-     */
-    public function apiVversionMarketsSummaryGet($version)
-    {
-        list($response) = $this->apiVversionMarketsSummaryGetWithHttpInfo($version);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsSummaryGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\SummaryResponseModel[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsSummaryGetWithHttpInfo($version)
-    {
-        $request = $this->apiVversionMarketsSummaryGetRequest($version);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\SummaryResponseModel[]' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\SummaryResponseModel[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\SummaryResponseModel[]';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\SummaryResponseModel[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsSummaryGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsSummaryGetAsync($version)
-    {
-        return $this->apiVversionMarketsSummaryGetAsyncWithHttpInfo($version)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsSummaryGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsSummaryGetAsyncWithHttpInfo($version)
-    {
-        $returnType = '\OpenAPI\Client\Model\SummaryResponseModel[]';
-        $request = $this->apiVversionMarketsSummaryGetRequest($version);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsSummaryGet'
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsSummaryGetRequest($version)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsSummaryGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/summary';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsTestGet
-     *
-     * @param  string $version version (required)
-     * @param  string $fingerprint fingerprint (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function apiVversionMarketsTestGet($version, $fingerprint = null)
-    {
-        $this->apiVversionMarketsTestGetWithHttpInfo($version, $fingerprint);
-    }
-
-    /**
-     * Operation apiVversionMarketsTestGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     * @param  string $fingerprint (optional)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsTestGetWithHttpInfo($version, $fingerprint = null)
-    {
-        $request = $this->apiVversionMarketsTestGetRequest($version, $fingerprint);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsTestGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $fingerprint (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsTestGetAsync($version, $fingerprint = null)
-    {
-        return $this->apiVversionMarketsTestGetAsyncWithHttpInfo($version, $fingerprint)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsTestGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     * @param  string $fingerprint (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsTestGetAsyncWithHttpInfo($version, $fingerprint = null)
-    {
-        $returnType = '';
-        $request = $this->apiVversionMarketsTestGetRequest($version, $fingerprint);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsTestGet'
-     *
-     * @param  string $version (required)
-     * @param  string $fingerprint (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsTestGetRequest($version, $fingerprint = null)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsTestGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/test';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($fingerprint !== null) {
-            if('form' === 'form' && is_array($fingerprint)) {
-                foreach($fingerprint as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['fingerprint'] = $fingerprint;
-            }
-        }
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsTickerGet
-     *
-     * @param  string $version version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return map[string,\OpenAPI\Client\Model\TickerResponseModel]
-     */
-    public function apiVversionMarketsTickerGet($version)
-    {
-        list($response) = $this->apiVversionMarketsTickerGetWithHttpInfo($version);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsTickerGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of map[string,\OpenAPI\Client\Model\TickerResponseModel], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsTickerGetWithHttpInfo($version)
-    {
-        $request = $this->apiVversionMarketsTickerGetRequest($version);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('map[string,\OpenAPI\Client\Model\TickerResponseModel]' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'map[string,\OpenAPI\Client\Model\TickerResponseModel]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = 'map[string,\OpenAPI\Client\Model\TickerResponseModel]';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'map[string,\OpenAPI\Client\Model\TickerResponseModel]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsTickerGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsTickerGetAsync($version)
-    {
-        return $this->apiVversionMarketsTickerGetAsyncWithHttpInfo($version)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsTickerGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsTickerGetAsyncWithHttpInfo($version)
-    {
-        $returnType = 'map[string,\OpenAPI\Client\Model\TickerResponseModel]';
-        $request = $this->apiVversionMarketsTickerGetRequest($version);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsTickerGet'
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsTickerGetRequest($version)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsTickerGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/ticker';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsTickersGet
-     *
-     * @param  string $version version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GetTickersResponse
-     */
-    public function apiVversionMarketsTickersGet($version)
-    {
-        list($response) = $this->apiVversionMarketsTickersGetWithHttpInfo($version);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsTickersGetWithHttpInfo
-     *
-     * @param  string $version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GetTickersResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsTickersGetWithHttpInfo($version)
-    {
-        $request = $this->apiVversionMarketsTickersGetRequest($version);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\GetTickersResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\GetTickersResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\GetTickersResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetTickersResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsTickersGetAsync
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsTickersGetAsync($version)
-    {
-        return $this->apiVversionMarketsTickersGetAsyncWithHttpInfo($version)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsTickersGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsTickersGetAsyncWithHttpInfo($version)
-    {
-        $returnType = '\OpenAPI\Client\Model\GetTickersResponse';
-        $request = $this->apiVversionMarketsTickersGetRequest($version);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsTickersGet'
-     *
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsTickersGetRequest($version)
-    {
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsTickersGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/tickers';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X-BF-API-KEY');
-        if ($apiKey !== null) {
-            $headers['X-BF-API-KEY'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiVversionMarketsTradesPairGet
-     *
-     * @param  string $pair pair (required)
-     * @param  string $version version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TradesResponseModel[]
-     */
-    public function apiVversionMarketsTradesPairGet($pair, $version)
-    {
-        list($response) = $this->apiVversionMarketsTradesPairGetWithHttpInfo($pair, $version);
-        return $response;
-    }
-
-    /**
-     * Operation apiVversionMarketsTradesPairGetWithHttpInfo
-     *
-     * @param  string $pair (required)
-     * @param  string $version (required)
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TradesResponseModel[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiVversionMarketsTradesPairGetWithHttpInfo($pair, $version)
-    {
-        $request = $this->apiVversionMarketsTradesPairGetRequest($pair, $version);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\TradesResponseModel[]' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TradesResponseModel[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\TradesResponseModel[]';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TradesResponseModel[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiVversionMarketsTradesPairGetAsync
-     *
-     * 
-     *
-     * @param  string $pair (required)
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsTradesPairGetAsync($pair, $version)
-    {
-        return $this->apiVversionMarketsTradesPairGetAsyncWithHttpInfo($pair, $version)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiVversionMarketsTradesPairGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $pair (required)
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiVversionMarketsTradesPairGetAsyncWithHttpInfo($pair, $version)
-    {
-        $returnType = '\OpenAPI\Client\Model\TradesResponseModel[]';
-        $request = $this->apiVversionMarketsTradesPairGetRequest($pair, $version);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiVversionMarketsTradesPairGet'
-     *
-     * @param  string $pair (required)
-     * @param  string $version (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function apiVversionMarketsTradesPairGetRequest($pair, $version)
-    {
-        // verify the required parameter 'pair' is set
-        if ($pair === null || (is_array($pair) && count($pair) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $pair when calling apiVversionMarketsTradesPairGet'
-            );
-        }
-        // verify the required parameter 'version' is set
-        if ($version === null || (is_array($version) && count($version) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling apiVversionMarketsTradesPairGet'
-            );
-        }
-
-        $resourcePath = '/api/v{version}/Markets/trades/{pair}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($pair !== null) {
-            $resourcePath = str_replace(
-                '{' . 'pair' . '}',
-                ObjectSerializer::toPathValue($pair),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($version !== null) {
-            $resourcePath = str_replace(
-                '{' . 'version' . '}',
-                ObjectSerializer::toPathValue($version),
                 $resourcePath
             );
         }

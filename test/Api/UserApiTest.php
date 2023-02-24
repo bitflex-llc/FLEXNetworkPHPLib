@@ -73,576 +73,84 @@ class UserApiTest extends TestCase
     }
 
     /**
-     * Test case for apiUserAffiliateGet
+     * Test case for apiV1UserBalancesGet
      *
      * .
      *
      */
-    public function testApiUserAffiliateGet()
+    public function testApiV1UserBalancesGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiUserAffiliatePost
+     * Test case for apiV1UserBalanceslistGet
      *
      * .
      *
      */
-    public function testApiUserAffiliatePost()
+    public function testApiV1UserBalanceslistGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiUserApikeysDelete
+     * Test case for apiV1UserDepositsGet
      *
      * .
      *
      */
-    public function testApiUserApikeysDelete()
+    public function testApiV1UserDepositsGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiUserApikeysGet
+     * Test case for apiV1UserFeesGet
      *
      * .
      *
      */
-    public function testApiUserApikeysGet()
+    public function testApiV1UserFeesGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiUserApikeysPost
+     * Test case for apiV1UserOrdersGet
      *
      * .
      *
      */
-    public function testApiUserApikeysPost()
+    public function testApiV1UserOrdersGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiUserBalancesGet
+     * Test case for apiV1UserTradehistoryGet
      *
      * .
      *
      */
-    public function testApiUserBalancesGet()
+    public function testApiV1UserTradehistoryGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiUserBalanceslistGet
+     * Test case for apiV1UserWithdrawalsGet
      *
      * .
      *
      */
-    public function testApiUserBalanceslistGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserDepositsGet
-     *
-     * .
-     *
-     */
-    public function testApiUserDepositsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserDisableGoogleAuthenticatorDelete
-     *
-     * .
-     *
-     */
-    public function testApiUserDisableGoogleAuthenticatorDelete()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserDisableGoogleAuthenticatorWithBackupCodeDelete
-     *
-     * .
-     *
-     */
-    public function testApiUserDisableGoogleAuthenticatorWithBackupCodeDelete()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserFeesGet
-     *
-     * .
-     *
-     */
-    public function testApiUserFeesGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserFinishTier1VerificationPost
-     *
-     * .
-     *
-     */
-    public function testApiUserFinishTier1VerificationPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserGenerateGoogleAuthenticatorSetupCodePost
-     *
-     * .
-     *
-     */
-    public function testApiUserGenerateGoogleAuthenticatorSetupCodePost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserGetVerificationLevelGet
-     *
-     * .
-     *
-     */
-    public function testApiUserGetVerificationLevelGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserOrdersGet
-     *
-     * .
-     *
-     */
-    public function testApiUserOrdersGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserSetPhoneNumberPost
-     *
-     * .
-     *
-     */
-    public function testApiUserSetPhoneNumberPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserSetparametersPost
-     *
-     * .
-     *
-     */
-    public function testApiUserSetparametersPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserSupportPost
-     *
-     * .
-     *
-     */
-    public function testApiUserSupportPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserTradehistoryGet
-     *
-     * .
-     *
-     */
-    public function testApiUserTradehistoryGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserVerificationsGet
-     *
-     * .
-     *
-     */
-    public function testApiUserVerificationsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserVerificationtypeGet
-     *
-     * .
-     *
-     */
-    public function testApiUserVerificationtypeGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserVerifyGoogleAuthenticatorSetupCodePost
-     *
-     * .
-     *
-     */
-    public function testApiUserVerifyGoogleAuthenticatorSetupCodePost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserVerifyPhoneNumberPost
-     *
-     * .
-     *
-     */
-    public function testApiUserVerifyPhoneNumberPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiUserWithdrawalsGet
-     *
-     * .
-     *
-     */
-    public function testApiUserWithdrawalsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserAffiliateGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserAffiliateGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserAffiliatePost
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserAffiliatePost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserApikeysDelete
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserApikeysDelete()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserApikeysGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserApikeysGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserApikeysPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserApikeysPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserBalancesGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserBalancesGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserBalanceslistGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserBalanceslistGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserDepositsGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserDepositsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserDisableGoogleAuthenticatorDelete
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserDisableGoogleAuthenticatorDelete()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserDisableGoogleAuthenticatorWithBackupCodeDelete
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserDisableGoogleAuthenticatorWithBackupCodeDelete()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserFeesGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserFeesGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserFinishTier1VerificationPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserFinishTier1VerificationPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserGenerateGoogleAuthenticatorSetupCodePost
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserGenerateGoogleAuthenticatorSetupCodePost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserGetVerificationLevelGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserGetVerificationLevelGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserOrdersGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserOrdersGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserSetPhoneNumberPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserSetPhoneNumberPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserSetparametersPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserSetparametersPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserSupportPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserSupportPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserTradehistoryGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserTradehistoryGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserVerificationsGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserVerificationsGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserVerificationtypeGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserVerificationtypeGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserVerifyGoogleAuthenticatorSetupCodePost
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserVerifyGoogleAuthenticatorSetupCodePost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserVerifyPhoneNumberPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserVerifyPhoneNumberPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionUserWithdrawalsGet
-     *
-     * .
-     *
-     */
-    public function testApiVversionUserWithdrawalsGet()
+    public function testApiV1UserWithdrawalsGet()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

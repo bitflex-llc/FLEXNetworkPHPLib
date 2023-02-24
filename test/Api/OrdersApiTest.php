@@ -73,72 +73,36 @@ class OrdersApiTest extends TestCase
     }
 
     /**
-     * Test case for apiOrdersCancelPost
+     * Test case for apiV1OrdersCancelPost
      *
      * .
      *
      */
-    public function testApiOrdersCancelPost()
+    public function testApiV1OrdersCancelPost()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiOrdersCancelallPost
+     * Test case for apiV1OrdersCancelallPost
      *
      * .
      *
      */
-    public function testApiOrdersCancelallPost()
+    public function testApiV1OrdersCancelallPost()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for apiOrdersPost
+     * Test case for apiV1OrdersPost
      *
      * .
      *
      */
-    public function testApiOrdersPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionOrdersCancelPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionOrdersCancelPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionOrdersCancelallPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionOrdersCancelallPost()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for apiVversionOrdersPost
-     *
-     * .
-     *
-     */
-    public function testApiVversionOrdersPost()
+    public function testApiV1OrdersPost()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
